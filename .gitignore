@@ -10,6 +10,7 @@ Win/build*
 # Distribution / packaging
 .Python
 build/
+build*
 git/
 develop-eggs/
 dist/

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(YUV420Player LANGUAGES CXX)
-
+project(WebRTCDemo LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
 #set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #SET(CMAKE_VERBOSE_MAKEFILE ON)
 #set(CMAKE_AUTOUIC ON)
@@ -39,6 +39,15 @@ project(YUV420Player LANGUAGES CXX)
 #set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${PROJECT_SOURCE_DIR}/out)
 
 
+INCLUDE_DIRECTORIES(
+	D:/dep/c_dep/webrtc/include
+        D:/dep/c_dep/webrtc/include/third_party/abseil-cpp
+        D:/dep/c_dep/webrtc/include/third_party/libyuv/include
+)
+
+LINK_DIRECTORIES(
+	D:/dep/c_dep/webrtc/lib/x64/debug
+)
 
 file(GLOB ALL_C_SRCS
          PlayerMainForm.cpp 
@@ -62,13 +71,14 @@ else()
   add_executable(${PROJECT_NAME} ${ALL_C_SRCS} )
 endif()
 
-
+# 
 
 set(ALL_LIB  	Qt5::Widgets
                 Qt5::Core
                 Qt5::Gui
                 Qt5::Multimedia
                 Qt5::OpenGL
+				webrtc.lib
                 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${ALL_LIB})
