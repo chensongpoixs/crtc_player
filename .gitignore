@@ -2,13 +2,15 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+qt-opengl
+Win/build*
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
 build/
+git/
 develop-eggs/
 dist/
 downloads/
